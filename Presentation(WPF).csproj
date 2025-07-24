@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<!-- Correcte versie en windows target -->
+		<RootNamespace>Presentation_WPF_</RootNamespace>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<!-- Bevestigt gebruik van WPF -->
+		<ImplicitUsings>enable</ImplicitUsings>
+		<!-- Zorgt voor automatische using-directieven -->
+	</PropertyGroup>
+
+	<!-- Verwijdering van overbodige FakesAssemblies regels -->
+	<ItemGroup>
+		<Compile Remove="FakesAssemblies\**" />
+		<EmbeddedResource Remove="FakesAssemblies\**" />
+		<None Remove="FakesAssemblies\**" />
+		<Page Remove="FakesAssemblies\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Images\accountscreen.png" />
+	  <None Remove="Images\adminscreen.png" />
+	  <None Remove="Images\checkbalance.png" />
+	  <None Remove="Images\loginscreen.png" />
+	  <None Remove="Images\mainwindow.png" />
+	  <None Remove="Images\makegiftcardscreen.jpg" />
+	  <None Remove="Images\paymentscreen.png" />
+	  <None Remove="Images\registerscreendata.png" />
+	  <None Remove="Images\usegiftcard.png" />
+	  <None Remove="Images\warning.png" />
+	</ItemGroup>
+
+	<!-- Zorg ervoor dat je geen expliciete PackageReference hebt voor PresentationFramework als het niet nodig is -->
+	<!-- <PackageReference Include="PresentationFramework" Version="4.6.0" /> -->
+	<!-- PresentationFramework wordt automatisch ingeladen door WPF SDK -->
+
+	<ItemGroup>
+		<PackageReference Include="Extended.Wpf.Toolkit" Version="4.7.25104.5739" />
+		<PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="17.5.0-beta.23060.1" />
+	</ItemGroup>
+
+	<!-- Projectreferenties naar je andere projecten -->
+	<ItemGroup>
+		<ProjectReference Include="..\BL\BL.csproj" />
+	</ItemGroup>
+
+	<!-- Resources die je in de output wilt krijgen -->
+	<ItemGroup>
+		<Resource Include="Icons\logoScrada.ico">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\accountscreen.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\adminscreen.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\checkbalance.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\loginscreen.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\mainwindow.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\makegiftcardscreen.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\paymentscreen.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\registerscreendata.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\usegiftcard.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\warning.png">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+</Project>
